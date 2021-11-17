@@ -1,0 +1,37 @@
+/* 
+    Created on : 17/11/2021, 15:05:15
+    Author     : Pedro
+*/
+
+@charset "ISO-8859-1";
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+fieldset#fieldsetLogin{
+    margin: auto;
+    max-width: 300px;
+    padding: 30px;
+}
+
+table{
+    margin-bottom: 20px;
+}
+
+h2{
+    margin: 0;
+    margin-bottom: 25px;
+    font-size: 25px;
+    text-align: center;
+}
+
+label{
+    float: right;
+}
+
+input[type=text], input[type=password]{
+    width: 200px;
+    float: right;
+}

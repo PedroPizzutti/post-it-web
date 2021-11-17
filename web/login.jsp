@@ -9,11 +9,13 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+        <meta name="viewport" content="width=device-width, initial-scale:1.0">
         <title>Post-it Login</title>
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
         <form>
-        <fieldset>
+        <fieldset id="fieldsetLogin">
             <h2>Post-it Login</h2>
             <table>
                 <tr>
@@ -24,10 +26,9 @@
                     <td><label for="senha">Senha:</label></td>
                     <td><input type="password" id="senha"></td>
                 </tr>
-                <tr>
-                    <td><input type="button" value="Novo Usuário"><input type="button" value="Logar"></td>
-                </tr>
             </table>
+            <input type="button" value="Novo Usuário">
+            <input type="button" value="Logar">
         </fieldset>
         </form>
     </body>
