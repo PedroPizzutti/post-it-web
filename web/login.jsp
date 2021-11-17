@@ -9,9 +9,26 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-        <title>JSP Page</title>
+        <title>Post-it Login</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <form>
+        <fieldset>
+            <h2>Post-it Login</h2>
+            <table>
+                <tr>
+                    <td><label for="usuario">Usuário:</label></td>
+                    <td><input type="text" id="usuario"></td>
+                </tr>
+                <tr>
+                    <td><label for="senha">Senha:</label></td>
+                    <td><input type="password" id="senha"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="Novo Usuário"><input type="button" value="Logar"></td>
+                </tr>
+            </table>
+        </fieldset>
+        </form>
     </body>
 </html>
