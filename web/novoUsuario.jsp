@@ -16,7 +16,7 @@
     </head>
     <body>
         <main>
-            <form>
+            <form action="###">
                 <fieldset class="usuario" id="novoUsuario">
                     <legend>Novo Usuário</legend>
                     <table>
@@ -28,8 +28,13 @@
                             <td><label for="senha">Senha:</label></td>
                             <td><input type="password" id="senha"></td>
                         </tr>
+                        <tr>
+                            <td><label for="nome">Nome:</label></td>
+                            <td><input type="text" id="nome"></td>
+                        </tr>
                     </table>
                     <input type="submit" value="Cadastrar" id="cadastrar">
+                     <input type="button" value="Voltar" id="voltar" onclick="location.href='login.jsp';">
                 </fieldset>
             </form>
         </main>

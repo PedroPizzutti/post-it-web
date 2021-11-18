@@ -16,7 +16,7 @@
     </head>
     <body>
         <main>
-            <form>
+            <form action="###">
                 <fieldset class="usuario">
                     <h2><img src="img/logo_lembrete.png" alt="logo lembrete"></h2>
                     <table>
@@ -29,7 +29,7 @@
                             <td><input type="password" id="senha"></td>
                         </tr>
                     </table>
-                    <input type="button" value="Logar" id="logar">
+                    <input type="submit" value="Logar" id="logar">
                     <input type="button" value="Novo Usuário" id="novoUsuario" onclick="location.href='novoUsuario.jsp';">
                 </fieldset>
             </form>
