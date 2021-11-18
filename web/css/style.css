@@ -10,10 +10,16 @@ body{
     font-size: 20px;
 }
 
+main{
+    min-height: 600px;
+    clear: both;
+}
+
 fieldset#fieldsetLogin{
-    margin: auto;
     max-width: 300px;
-    padding: 30px;
+    padding: 10px 35px;
+    box-shadow: 3px 3px 7px #999999;
+    margin: 10% auto auto auto;
 }
 
 table{
@@ -21,10 +27,12 @@ table{
 }
 
 h2{
-    margin: 0;
-    margin-bottom: 25px;
-    font-size: 30px;
+    margin: 0px;
     text-align: center;
+}
+
+h2 img{
+    width: 70%;
 }
 
 label{
@@ -39,11 +47,15 @@ input[type=text], input[type=password]{
     width: 200px;
     float: right;
     font-size: 16px;
+    box-shadow: 3px 3px 7px #999999;
 }
 
 input[type=button]{
     float: right;
     font-size: 15px;
+    font-weight: bold;
     margin: 0px 5px;
     padding: 5px;
+    background-color: #C0D904;
+    box-shadow: 3px 3px 7px #999999;
 }

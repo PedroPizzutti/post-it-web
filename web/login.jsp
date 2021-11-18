@@ -10,26 +10,28 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
         <meta name="viewport" content="width=device-width, initial-scale:1.0">
-        <title>Post-it Login</title>
+        <title>Lembrete Login</title>
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <form>
-        <fieldset id="fieldsetLogin">
-            <h2>Post-it Login</h2>
-            <table>
-                <tr>
-                    <td><label for="usuario">Usuário:</label></td>
-                    <td><input type="text" id="usuario"></td>
-                </tr>
-                <tr>
-                    <td><label for="senha">Senha:</label></td>
-                    <td><input type="password" id="senha"></td>
-                </tr>
-            </table>
-            <input type="button" value="Logar">
-            <input type="button" value="Novo Usuário">
-        </fieldset>
-        </form>
+        <main>
+            <form>
+                <fieldset id="fieldsetLogin">
+                    <h2><img src="img/logo_lembrete.png" alt="logo lembrete"></h2>
+                    <table>
+                        <tr>
+                            <td><label for="usuario">Usuário:</label></td>
+                            <td><input type="text" id="usuario"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="senha">Senha:</label></td>
+                            <td><input type="password" id="senha"></td>
+                        </tr>
+                    </table>
+                    <input type="button" value="Logar" id="logar">
+                    <input type="button" value="Novo Usuário" id="novoUsuario">
+                </fieldset>
+            </form>
+        </main>
     </body>
 </html>
