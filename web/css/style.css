@@ -15,11 +15,22 @@ main{
     clear: both;
 }
 
-fieldset#fieldsetLogin{
+fieldset.usuario{
     max-width: 300px;
-    padding: 10px 35px;
+    padding: 20px 35px;
     box-shadow: 3px 3px 7px #999999;
     margin: 10% auto auto auto;
+    background-color: white;
+    border-radius: 8px;
+}
+
+fieldset#novoUsuario{
+    max-width: 300px;
+    padding: 35px 35px;
+    box-shadow: 3px 3px 7px #999999;
+    margin: 10% auto auto auto;
+    background-color: white;
+    border-radius: 8px;
 }
 
 table{
@@ -48,14 +59,16 @@ input[type=text], input[type=password]{
     float: right;
     font-size: 16px;
     box-shadow: 3px 3px 7px #999999;
+    border-radius: 2px;
 }
 
-input[type=button]{
+input[type=button], input[type=submit]{
     float: right;
     font-size: 15px;
     font-weight: bold;
     margin: 0px 5px;
-    padding: 5px;
+    padding: 7px;
     background-color: #C0D904;
     box-shadow: 3px 3px 7px #999999;
+    border-radius: 8px;
 }

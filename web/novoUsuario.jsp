@@ -1,13 +1,13 @@
 <%-- 
-    Document   : login
-    Created on : 17/11/2021, 11:24:17
+    Document   : novoUsuario
+    Created on : 18/11/2021, 10:56:53
     Author     : Pedro
 --%>
 
 <%@page contentType="text/html" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
-    <head>
+     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
         <meta name="viewport" content="width=device-width, initial-scale:1.0">
         <title>Lembrete Login</title>
@@ -17,20 +17,19 @@
     <body>
         <main>
             <form>
-                <fieldset class="usuario">
-                    <h2><img src="img/logo_lembrete.png" alt="logo lembrete"></h2>
+                <fieldset class="usuario" id="novoUsuario">
+                    <legend>Novo Usuário</legend>
                     <table>
                         <tr>
                             <td><label for="usuario">Usuário:</label></td>
-                            <td><input type="text" id="usuario" value="${param.usuario}"></td>
+                            <td><input type="text" id="usuario"></td>
                         </tr>
                         <tr>
                             <td><label for="senha">Senha:</label></td>
                             <td><input type="password" id="senha"></td>
                         </tr>
                     </table>
-                    <input type="button" value="Logar" id="logar">
-                    <input type="button" value="Novo Usuário" id="novoUsuario" onclick="location.href='novoUsuario.jsp';">
+                    <input type="submit" value="Cadastrar" id="cadastrar">
                 </fieldset>
             </form>
         </main>
