@@ -27,8 +27,8 @@
                     <td><input type="password" id="senha"></td>
                 </tr>
             </table>
-            <input type="button" value="Novo Usuário">
             <input type="button" value="Logar">
+            <input type="button" value="Novo Usuário">
         </fieldset>
         </form>
     </body>
