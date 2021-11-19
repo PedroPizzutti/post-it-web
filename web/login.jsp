@@ -16,10 +16,10 @@
     </head>
     <body>
         <main>
-            <jsp:include page="msg.jsp"></jsp:include>
             <form action="###">
                 <fieldset class="usuario">
                     <h2><img src="img/logo_lembrete.png" alt="logo lembrete"></h2>
+                    <jsp:include page="msg.jsp"></jsp:include>
                     <table>
                         <tr>
                             <td><label for="usuario">Usuário:</label></td>

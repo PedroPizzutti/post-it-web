@@ -5,8 +5,10 @@
  */
 package br.pizzutti.postweb.command;
 
+import br.pizzutti.postweb.bo.UsuarioBO;
 import br.pizzutti.postweb.dao.UsuarioDAO;
 import br.pizzutti.postweb.dto.UsuarioDTO;
+import br.pizzutti.postweb.exception.ExceçaoNegocio;
 import br.pizzutti.postweb.exception.ExceçaoPersistencia;
 import br.pizzutti.postweb.util.ConstantesMSG;
 import java.util.logging.Level;
@@ -33,19 +35,26 @@ public class NovoUsuarioCommand implements Command{
         String nome = request.getParameter("nome");
 
         UsuarioDTO usuarioDTO = new UsuarioDTO();
-        
         usuarioDTO.setUsuario(usuario);
         usuarioDTO.setSenha(senha);
         usuarioDTO.setNome(nome);
         
-        UsuarioDAO usuarioDAO = new UsuarioDAO();
-        
         try {
-            usuarioDAO.inserirUsuario(usuarioDTO);
-            proxima = "login.jsp";
-            request.setAttribute("msgSucesso", ConstantesMSG.MSG_SUCESSO_CAD);
-        } catch (ExceçaoPersistencia ex) {
-            throw new RuntimeException(ex);
+            
+            UsuarioBO usuarioBO = new UsuarioBO();
+            boolean isValido = usuarioBO.validarNovoUsuario(usuarioDTO);
+            
+            if(isValido){
+                UsuarioDAO usuarioDAO = new UsuarioDAO();
+                usuarioDAO.inserirUsuario(usuarioDTO);
+                proxima = "login.jsp";
+                request.setAttribute("msgSucesso", ConstantesMSG.MSG_SUCESSO_CAD_USUARIO);
+            } else {
+                request.setAttribute("msgErro", ConstantesMSG.MSG_ERRO_CAD_USUARIO);
+            }
+        } catch (Exception ex) {
+            proxima = "novoUsuario.jsp";
+            request.setAttribute("msgErro", ex.getMessage());
         }
         return proxima;
     }

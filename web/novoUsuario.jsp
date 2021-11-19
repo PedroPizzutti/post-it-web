@@ -16,13 +16,17 @@
     </head>
     <body>
         <main>
+            
             <form method="post" action="main?acao=novoUsuario">
                 <fieldset class="usuario" id="novoUsuario">
                     <legend>Novo Usuário</legend>
                     <table>
                         <tr>
+                             <jsp:include page="msg.jsp"></jsp:include>
+                        </tr>
+                        <tr>
                             <td><label for="usuario">Usuário:</label></td>
-                            <td><input type="text" id="usuario" name="usuario"></td>
+                            <td><input type="text" id="usuario" name="usuario" value="${param.usuario}"></td>
                         </tr>
                         <tr>
                             <td><label for="senha">Senha:</label></td>
@@ -30,11 +34,11 @@
                         </tr>
                         <tr>
                             <td><label for="nome">Nome:</label></td>
-                            <td><input type="text" id="nome" name="nome"></td>
+                            <td><input type="text" id="nome" name="nome" value="${param.nome}"></td>
                         </tr>
                     </table>
-                    <input type="submit" value="Cadastrar" id="cadastrar">
-                    <input type="button" value="Voltar" id="voltar" onclick="location.href='login.jsp';">
+                        <input type="submit" value="Cadastrar" id="cadastrar">
+                        <input type="button" value="Voltar" id="voltar" onclick="location.href='login.jsp';">
                 </fieldset>
             </form>
         </main>
