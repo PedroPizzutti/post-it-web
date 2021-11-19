@@ -8,6 +8,7 @@ package br.pizzutti.postweb.command;
 import br.pizzutti.postweb.dao.UsuarioDAO;
 import br.pizzutti.postweb.dto.UsuarioDTO;
 import br.pizzutti.postweb.exception.ExceçaoPersistencia;
+import br.pizzutti.postweb.util.ConstantesMSG;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
@@ -42,6 +43,7 @@ public class NovoUsuarioCommand implements Command{
         try {
             usuarioDAO.inserirUsuario(usuarioDTO);
             proxima = "login.jsp";
+            request.setAttribute("msgSucesso", ConstantesMSG.MSG_SUCESSO_CAD);
         } catch (ExceçaoPersistencia ex) {
             throw new RuntimeException(ex);
         }
