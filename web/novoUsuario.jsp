@@ -16,25 +16,25 @@
     </head>
     <body>
         <main>
-            <form action="###">
+            <form method="post" action="main?acao=novoUsuario">
                 <fieldset class="usuario" id="novoUsuario">
                     <legend>Novo Usuário</legend>
                     <table>
                         <tr>
                             <td><label for="usuario">Usuário:</label></td>
-                            <td><input type="text" id="usuario"></td>
+                            <td><input type="text" id="usuario" name="usuario"></td>
                         </tr>
                         <tr>
                             <td><label for="senha">Senha:</label></td>
-                            <td><input type="password" id="senha"></td>
+                            <td><input type="password" id="senha" name="senha"></td>
                         </tr>
                         <tr>
                             <td><label for="nome">Nome:</label></td>
-                            <td><input type="text" id="nome"></td>
+                            <td><input type="text" id="nome" name="nome"></td>
                         </tr>
                     </table>
                     <input type="submit" value="Cadastrar" id="cadastrar">
-                     <input type="button" value="Voltar" id="voltar" onclick="location.href='login.jsp';">
+                    <input type="button" value="Voltar" id="voltar" onclick="location.href='login.jsp';">
                 </fieldset>
             </form>
         </main>
