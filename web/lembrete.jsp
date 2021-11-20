@@ -16,7 +16,9 @@
     </head>
     <body>
         <jsp:include page="cabeçalho.jsp"></jsp:include>
-        
+        <main>
+            <p>${param.usuario}</p>
+        </main>
         
         <jsp:include page="rodape.jsp"></jsp:include>
     </body>

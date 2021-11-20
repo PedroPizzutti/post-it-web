@@ -37,8 +37,22 @@ public class UsuarioBO {
             throw new ExceçaoNegocio(ConstantesMSG.MSG_ERRO_CAMPO_OBRIGATORIO.replace("?", "nome"));
 
         }
-       
         return validacao;
     }
     
+    public boolean validarLoginBO(UsuarioDTO usuarioDTO) throws ExceçaoNegocio{
+        boolean validacao = true;
+        
+        if(usuarioDTO.getUsuario() == null || "".equals(usuarioDTO.getUsuario())){
+            validacao = false;
+            throw new ExceçaoNegocio(ConstantesMSG.MSG_ERRO_CAMPO_OBRIGATORIO.replace("?", "usuário"));
+        }
+        
+        if(usuarioDTO.getSenha() == null || "".equals(usuarioDTO.getSenha())){
+            validacao = false;
+            throw new ExceçaoNegocio(ConstantesMSG.MSG_ERRO_CAMPO_OBRIGATORIO.replace("?", "senha"));
+        }
+        
+        return validacao;
+    }
 }

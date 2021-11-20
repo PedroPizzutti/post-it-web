@@ -28,8 +28,6 @@ public class NovoUsuarioCommand implements Command{
     @Override
     public String execute(HttpServletRequest request) {
         
-        proxima = "login.jsp";
-        
         String usuario = request.getParameter("usuario");
         String senha = request.getParameter("senha");
         String nome = request.getParameter("nome");

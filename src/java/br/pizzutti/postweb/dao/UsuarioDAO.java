@@ -9,6 +9,7 @@ import br.pizzutti.postweb.dto.UsuarioDTO;
 import br.pizzutti.postweb.exception.ExceçaoPersistencia;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
@@ -19,10 +20,17 @@ public class UsuarioDAO {
     
     private Connection conexao;
     private PreparedStatement pstm;
+    private ResultSet resultSet;
 
     public UsuarioDAO() {
     }
-    
+    /**
+     * 
+     * @param usuarioDTO
+     * @throws ExceçaoPersistencia
+     * 
+     * Método para inserção de novos usuários.
+     */
     public void inserirUsuario(UsuarioDTO usuarioDTO) throws ExceçaoPersistencia{
         
         try {
@@ -48,5 +56,47 @@ public class UsuarioDAO {
                 ex.printStackTrace();
             }
         }
+    }
+    
+    /**
+     * 
+     * @param usuarioDTO
+     * @return
+     * @throws ExceçaoPersistencia 
+     * 
+     * Método para validar usuário e senha.
+     */
+    public boolean validarUsuario(UsuarioDTO usuarioDTO) throws ExceçaoPersistencia{
+        
+        boolean isValido = false;
+        
+        try{
+            conexao = new Conexao().conectarBanco();
+            
+            StringBuilder sql = new StringBuilder();
+            sql.append("SELECT * FROM TB_USUARIO");
+            sql.append(" WHERE LOGIN_USUARIO = ? AND SENHA_USUARIO = ?");
+            
+            pstm = conexao.prepareCall(sql.toString());
+            pstm.setString(1, usuarioDTO.getUsuario());
+            pstm.setString(2, usuarioDTO.getSenha());
+            
+            resultSet = pstm.executeQuery();
+            
+            if(resultSet.next()){
+                isValido = true;
+            }
+
+        } catch (Exception ex){
+            ex.printStackTrace();
+            throw new ExceçaoPersistencia(ex);
+        } finally {
+            try{
+                conexao.close();
+            } catch(Exception ex) {
+                ex.printStackTrace();
+            }
+        }
+        return isValido;
     }
 }

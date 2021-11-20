@@ -23,11 +23,11 @@
                     <table>
                         <tr>
                             <td><label for="usuario">Usuário:</label></td>
-                            <td><input type="text" id="usuario" value="${param.usuario}"></td>
+                            <td><input type="text" id="usuario" name="usuario" value="${param.usuario}"></td>
                         </tr>
                         <tr>
                             <td><label for="senha">Senha:</label></td>
-                            <td><input type="password" id="senha"></td>
+                            <td><input type="password" id="senha" name="senha"></td>
                         </tr>
                     </table>
                     <input type="submit" value="Logar" id="logar">
