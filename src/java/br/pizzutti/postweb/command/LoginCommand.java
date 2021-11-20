@@ -24,26 +24,26 @@ public class LoginCommand implements Command {
     @Override
     public String execute(HttpServletRequest request) {
         
-        proxima = "login.jsp";
+        proxima = "index.jsp";
         
         String usuario = request.getParameter("usuario");
         String senha = request.getParameter("senha");
         
-        UsuarioDTO usuarioDTO = new UsuarioDTO();
-        usuarioDTO.setUsuario(usuario);
-        usuarioDTO.setSenha(senha);
+        UsuarioDTO usuarioNegocio = new UsuarioDTO();
+        usuarioNegocio.setUsuario(usuario);
+        usuarioNegocio.setSenha(senha);
         
         try{
            
             UsuarioBO usuarioBO = new UsuarioBO();
-            boolean isValido = usuarioBO.validarLoginBO(usuarioDTO);
+            boolean isValido = usuarioBO.validarLoginBO(usuarioNegocio);
             
             if(isValido){
                 UsuarioDAO usuarioDAO = new UsuarioDAO();
-                boolean loginCorreto = usuarioDAO.validarUsuario(usuarioDTO);
-                
-                if(loginCorreto){
-                    request.getSession().setAttribute("usuario", usuarioDTO.getUsuario());
+                boolean loginAutorizado = usuarioDAO.validarUsuario(usuarioNegocio);
+                if(loginAutorizado){
+                    UsuarioDTO usuarioBanco = usuarioDAO.usuarioBanco(usuarioNegocio);
+                    request.getSession().setAttribute("usuario", usuarioBanco.getNome());
                     proxima = "lembrete.jsp";
                 } else {
                     request.setAttribute("msgErro", ConstantesMSG.MSG_ERRO_USUARIO_SENHA_INVALIDO);

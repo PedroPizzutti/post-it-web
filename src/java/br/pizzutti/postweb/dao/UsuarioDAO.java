@@ -74,7 +74,7 @@ public class UsuarioDAO {
             conexao = new Conexao().conectarBanco();
             
             StringBuilder sql = new StringBuilder();
-            sql.append("SELECT * FROM TB_USUARIO");
+            sql.append("SELECT LOGIN_USUARIO, SENHA_USUARIO FROM TB_USUARIO");
             sql.append(" WHERE LOGIN_USUARIO = ? AND SENHA_USUARIO = ?");
             
             pstm = conexao.prepareCall(sql.toString());
@@ -98,5 +98,42 @@ public class UsuarioDAO {
             }
         }
         return isValido;
+    }
+    
+    public UsuarioDTO usuarioBanco(UsuarioDTO usuarioDTO) throws ExceçaoPersistencia{
+        
+        UsuarioDTO usuarioBanco = new UsuarioDTO();
+        
+        try{
+            conexao = new Conexao().conectarBanco();
+            
+            StringBuilder sql = new StringBuilder();
+            sql.append("SELECT * FROM TB_USUARIO");
+            sql.append(" WHERE LOGIN_USUARIO = ? AND SENHA_USUARIO = ?");
+            
+            pstm = conexao.prepareCall(sql.toString());
+            pstm.setString(1, usuarioDTO.getUsuario());
+            pstm.setString(2, usuarioDTO.getSenha());
+            
+            resultSet = pstm.executeQuery();
+            
+            if(resultSet.next()){
+                usuarioBanco.setIdUsuario(resultSet.getInt("id_usuario"));
+                usuarioBanco.setNome(resultSet.getString("nome_usuario"));
+                usuarioBanco.setUsuario(resultSet.getString("login_usuario"));
+                usuarioBanco.setSenha(resultSet.getString("senha_usuario"));
+            }
+
+        } catch (Exception ex){
+            ex.printStackTrace();
+            throw new ExceçaoPersistencia(ex);
+        } finally {
+            try{
+                conexao.close();
+            } catch(Exception ex) {
+                ex.printStackTrace();
+            }
+        }
+        return usuarioBanco;
     }
 }

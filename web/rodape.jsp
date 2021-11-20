@@ -6,6 +6,6 @@
 
 <footer>
     <div>
-        <p>Desenvolvido por Pedro Pizzutti - Todos os Direitos Reservados</p>
+        <p>Desenvolvido por Pedro Pizzutti - Todos os Direitos Reservados &copy;</p>
     </div>
 </footer>
