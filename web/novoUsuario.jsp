@@ -42,5 +42,6 @@
                 </fieldset>
             </form>
         </main>
+        <jsp:include page="rodape.jsp"></jsp:include>
     </body>
 </html>

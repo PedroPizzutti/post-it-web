@@ -1,6 +1,7 @@
 package br.pizzutti.postweb.servlet;
 
 import br.pizzutti.postweb.command.Command;
+import br.pizzutti.postweb.command.LoginCommand;
 import br.pizzutti.postweb.command.NovoUsuarioCommand;
 import java.io.IOException;
 import java.util.HashMap;
@@ -25,6 +26,7 @@ public class MainServlet extends HttpServlet {
     @Override
     public void init(){
         comandos.put("novoUsuario", new NovoUsuarioCommand());
+        comandos.put("login", new LoginCommand());
     }
 
     

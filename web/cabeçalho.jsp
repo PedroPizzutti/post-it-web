@@ -5,7 +5,7 @@
 --%>
 
 <header>
-    <div class="logo">
+    <div class="cabeçalho">
         <a href="index.jsp"><img src="img/logo_lembrete.png" alt="Logo Lembrete"></a>
     </div>
 </header>

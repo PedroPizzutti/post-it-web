@@ -16,7 +16,7 @@
     </head>
     <body>
         <main>
-            <form action="###">
+            <form action="main?acao=login" method="post">
                 <fieldset class="usuario">
                     <h2><img src="img/logo_lembrete.png" alt="logo lembrete"></h2>
                     <jsp:include page="msg.jsp"></jsp:include>
@@ -35,5 +35,6 @@
                 </fieldset>
             </form>
         </main>
+        <jsp:include page="rodape.jsp"></jsp:include>
     </body>
 </html>
