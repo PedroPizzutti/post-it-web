@@ -15,13 +15,26 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <jsp:include page="cabeçalho.jsp"></jsp:include>
+        <header>
+            <div class="cabeçalho">
+                <a href="novoLembrete.jsp"><img src="img/logo_lembrete.png" alt="Logo Lembrete"></a>
+            </div>
+        </header>
         <main class="mainLembrete">
             <div class="boasVindas">
-                <p>Bem-vindo(a), <strong>${sessionScope.usuario}</strong></p> 
+                <p id="nomeLembrete">Lembretes de <strong>${sessionScope.usuarioDTO.nome}</strong></p>
             </div>
+            <fieldset>
+            <div id="campoLembretes">
+            <fieldset class="lembrete">
+                <legend></legend>
+            </fieldset>
+            <fieldset class="lembrete">
+                <legend></legend>
+            </fieldset>
+            </fieldset>
+            <p><a id="deslogar" href="###">Sair</a></p>
         </main>
-        
         <jsp:include page="rodape.jsp"></jsp:include>
     </body>
 </html>

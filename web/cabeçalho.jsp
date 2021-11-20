@@ -6,6 +6,6 @@
 
 <header>
     <div class="cabeçalho">
-        <a href="index.jsp"><img src="img/logo_lembrete.png" alt="Logo Lembrete"></a>
+        <a href="novoLembrete.jsp"><img src="img/logo_lembrete.png" alt="Logo Lembrete"></a>
     </div>
 </header>

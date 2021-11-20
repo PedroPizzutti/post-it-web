@@ -43,7 +43,7 @@ public class LoginCommand implements Command {
                 boolean loginAutorizado = usuarioDAO.validarUsuario(usuarioNegocio);
                 if(loginAutorizado){
                     UsuarioDTO usuarioBanco = usuarioDAO.usuarioBanco(usuarioNegocio);
-                    request.getSession().setAttribute("usuario", usuarioBanco.getNome());
+                    request.getSession().setAttribute("usuarioDTO", usuarioBanco);
                     proxima = "lembrete.jsp";
                 } else {
                     request.setAttribute("msgErro", ConstantesMSG.MSG_ERRO_USUARIO_SENHA_INVALIDO);

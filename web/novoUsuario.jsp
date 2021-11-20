@@ -40,7 +40,7 @@
                         </tr>
                     </table>
                         <input type="submit" value="Cadastrar" id="cadastrar">
-                        <input type="button" value="Voltar" id="voltar" onclick="location.href='login.jsp';">
+                        <input type="button" value="Voltar" id="voltar" onclick="location.href='index.jsp';">
                 </fieldset>
             </form>
         </main>
