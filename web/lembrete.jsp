@@ -16,8 +16,10 @@
     </head>
     <body>
         <jsp:include page="cabeçalho.jsp"></jsp:include>
-        <main>
-            <p>${param.usuario}</p>
+        <main class="mainLembrete">
+            <div class="boasVindas">
+                <p>Bem-vindo(a), <strong>${sessionScope.usuario}</strong></p> 
+            </div>
         </main>
         
         <jsp:include page="rodape.jsp"></jsp:include>

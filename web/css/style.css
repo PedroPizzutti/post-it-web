@@ -18,7 +18,7 @@ main{
     background-color: white;
     margin: auto;
     margin-top: 10%;
-    max-width: 800px;
+    max-width: 900px;
 }
 
 fieldset.usuario{
@@ -37,6 +37,20 @@ fieldset#novoUsuario{
     margin: auto;
     background-color: white;
     border-radius: 8px;
+}
+.mainLembrete{
+    margin: 0;
+}
+
+.boasVindas {
+    margin: 0;
+    float: right;
+    text-align: right;
+}
+
+.boasVindas p{
+    margin: 0;
+    font-size: 17px;
 }
 
 table{
@@ -96,6 +110,7 @@ input[type=button], input[type=submit]{
 /*Estilo cabeçalho e rodapé*/
 
 header{
+    min-height: 100px;
     border-bottom: dotted #C0D904;
     text-align: center;
 }
@@ -116,8 +131,9 @@ footer{
     margin-left: auto;
     margin-right: auto;
     bottom: 0;
-    background-color: #C0D904;
+    border-top: dotted #C0D904;
     max-height: 200px;
+    max-width: 900px;
 }
 
 footer p{

@@ -15,6 +15,8 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
+        <header>
+        </header>
         <main>
             <form action="main?acao=login" method="post">
                 <fieldset class="usuario">
