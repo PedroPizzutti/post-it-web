@@ -15,6 +15,7 @@ import java.sql.SQLException;
 /**
  *
  * @author Pedro
+ * Classe DAO de usuário.
  */
 public class UsuarioDAO {
     

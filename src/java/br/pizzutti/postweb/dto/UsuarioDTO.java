@@ -10,6 +10,7 @@ import java.io.Serializable;
 /**
  *
  * @author Pedro
+ * Classe DTO para os usuários.
  * 
  */
 public class UsuarioDTO implements Serializable{
