@@ -15,15 +15,12 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <header></header>
         <main>
             <form action="###" method="post">
-                <fieldset>
-                    <table>
-                        <tr>
-                            <td>${idUsuario}</td>
-                        </tr>
-                    </table>
+                <fieldset class="novoLembrete">
+                    <legend>Novo Lembrete</legend>
+                    <textarea rows="3" cols="10" autofocus="true" maxlength="40" name="lembrete"></textarea>
+                    <input type="submit" value="Colar no Mural" id="botaoNovoLembrete">
                 </fieldset>
             </form>
         </main>

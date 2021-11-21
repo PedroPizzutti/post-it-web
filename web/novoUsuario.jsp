@@ -15,10 +15,7 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <header>
-        </header>
         <main>
-            
             <form method="post" action="main?acao=novoUsuario">
                 <fieldset class="usuario" id="novoUsuario">
                     <legend>Novo Usuário</legend>

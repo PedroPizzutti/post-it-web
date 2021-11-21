@@ -13,23 +13,60 @@ body, html{
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
-    max-width: 900px;
 }
 
 main{
     clear: both;
     background-color: white;
+    margin: 8% auto auto auto;
+}
+
+fieldset.blocoLembrete{
+    margin: 25px 230px 25px 230px;
+    border: none;
+}
+
+fieldset.novoLembrete {
+    width: 350px;
+    height: 300px;
     margin: auto;
-    margin-top: 10%;
-    max-width: 900px;
+    border: none;
+    background-color: #C0D904;
+    box-shadow: 3px 3px 7px #999999;
+}
+
+legend{
+    font-weight: bold;
+}
+
+textarea{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 50px;
+    border: none;
+    background-color: #C0D904;
+    font-size: 35px;
+    font-weight: bold;
+}
+#botaoNovoLembrete{
+    margin: 0;
+    width: 100%;
+    border: none;
+    box-shadow: 0 0 5px #D6FF40;
+}
+
+#botaoNovoLembrete:hover{
+    background-color: #D6FF40;
 }
 
 fieldset.lembrete{
     float: left;
     width: 150px;
     height: 150px;
-    margin: 20px;
-    box-shadow: 3px 3px 7px #C0D904;
+    margin: 15px;
+    border: none;
+    background-color: #C0D904;
+    box-shadow: 3px 3px 7px #999999;
 }
 
 fieldset.usuario{
@@ -37,6 +74,7 @@ fieldset.usuario{
     padding: 20px 35px;
     box-shadow: 3px 3px 7px #C0D904;
     margin: auto;
+    border: solid #B6D936;
     background-color: white;
     border-radius: 8px;
 }
@@ -59,7 +97,6 @@ fieldset#novoUsuario{
 }
 
 .boasVindas {
-    margin: 10px 0 0 0;
     text-align: center;
     min-height: 25px;
 }
@@ -72,12 +109,12 @@ fieldset#novoUsuario{
 #nomeLembrete{
     text-align: center;
     margin: 0;
+    float: left;
 }
 
 #deslogar{
     margin: auto;
     float: right;
-    display: block;
     text-decoration: none;
     color: black;
     font-size: 16px;
@@ -121,48 +158,64 @@ input[type=button], input[type=submit]{
     background-color: #C0D904;
     box-shadow: 3px 3px 7px #999999;
     border-radius: 8px;
+    border: none;
 }
+
+input[type=button]:hover, input[type=submit]:hover{
+    float: right;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0px 5px;
+    padding: 7px;
+    background-color: #C0D904;
+    box-shadow: 3px 3px 7px #999999;
+    border-radius: 8px;
+    background-color: #D6FF40;
+    border: none;
+}
+
 
 /*Estilos das mensagens de erro e sucesso*/
 
 .sucessoDiv p{
     text-align: center;
     padding: 2px;
-    border: groove #C0D904;
+    border: outset #C0D904;
+    box-shadow: 0 0 10px #C0D904;
 }
 
 .erroDiv p{
     text-align: center;
     padding: 2px;
-    border: groove #C0D904;
+    border: outset #C0D904;
+    box-shadow: 0 0 5px #C0D904;
 }
 
 /*Estilo cabeçalho e rodapé*/
 
 header{
-    min-height: 100px;
-    border-bottom: dotted #C0D904;
+    min-height: 40px;
+    border-bottom: solid #C0D904;
+    box-shadow: 3px 3px 7px #C0D904;
     text-align: center;
 }
 
 header img{
+    margin-top: 15px;
     max-width: 200px;
 
 }
 
 footer{
     display: block;
-    position: fixed;
-    flex-shrink: 0;
     font-size: 16px;
-    text-align: center;
-    margin: auto;
-    left: 0;
-    right: 0;
+    position: fixed;
+    width: 100%;
     bottom: 0;
-    border-top: dotted #C0D904;
+    text-align: center;
+    margin: 50px auto auto auto;
+    background-color: #C0D904;
     height: 50px;
-    max-width: 900px;
 }
 
 footer p{

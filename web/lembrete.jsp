@@ -21,19 +21,14 @@
             </div>
         </header>
         <main class="mainLembrete">
-            <div class="boasVindas">
-                <p id="nomeLembrete">Lembretes de <strong>${sessionScope.usuarioDTO.nome}</strong></p>
-            </div>
-            <fieldset>
-            <div id="campoLembretes">
-            <fieldset class="lembrete">
-                <legend></legend>
+            <fieldset class="blocoLembrete">
+                <div class="boasVindas">
+                    <p id="nomeLembrete">Mural de <strong>${sessionScope.usuarioDTO.nome}</strong></p><a id="deslogar" href="###">Sair</a> 
+                </div>
+                <div id="campoLembretes">
+                  
+                </div>
             </fieldset>
-            <fieldset class="lembrete">
-                <legend></legend>
-            </fieldset>
-            </fieldset>
-            <p><a id="deslogar" href="###">Sair</a></p>
         </main>
         <jsp:include page="rodape.jsp"></jsp:include>
     </body>
