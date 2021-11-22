@@ -5,26 +5,25 @@
  */
 package br.pizzutti.postweb.exception;
 
-
 /**
  *
  * @author Pedro
  * 
- * classe responsável por encapsular as exceções de persistência
+ * Classe de exceção para os objetos de negócio.
  */
-public class ExceçaoPersistencia extends Exception {
-
+public class ExcecaoNegocio extends Exception {
+    
     private static final long serialVersionUID = 1L;
 
-    public ExceçaoPersistencia(String message) {
+    public ExcecaoNegocio(String message) {
         super(message);
     }
 
-    public ExceçaoPersistencia(String message, Throwable cause) {
+    public ExcecaoNegocio(String message, Throwable cause) {
         super(message, cause);
     }
 
-    public ExceçaoPersistencia(Throwable cause) {
+    public ExcecaoNegocio(Throwable cause) {
         super(cause);
-    }
+    }  
 }

@@ -8,8 +8,8 @@ package br.pizzutti.postweb.command;
 import br.pizzutti.postweb.bo.UsuarioBO;
 import br.pizzutti.postweb.dao.UsuarioDAO;
 import br.pizzutti.postweb.dto.UsuarioDTO;
-import br.pizzutti.postweb.exception.ExceçaoNegocio;
-import br.pizzutti.postweb.exception.ExceçaoPersistencia;
+import br.pizzutti.postweb.exception.ExcecaoNegocio;
+import br.pizzutti.postweb.exception.ExcecaoPersistencia;
 import br.pizzutti.postweb.util.ConstantesMSG;
 import javax.servlet.http.HttpServletRequest;
 
@@ -39,8 +39,10 @@ public class LoginCommand implements Command {
             boolean isValido = usuarioBO.validarLoginBO(usuarioNegocio);
             
             if(isValido){
+                
                 UsuarioDAO usuarioDAO = new UsuarioDAO();
                 boolean loginAutorizado = usuarioDAO.validarUsuario(usuarioNegocio);
+                
                 if(loginAutorizado){
                     UsuarioDTO usuarioBanco = usuarioDAO.usuarioBanco(usuarioNegocio);
                     request.getSession().setAttribute("usuarioDTO", usuarioBanco);
@@ -49,7 +51,7 @@ public class LoginCommand implements Command {
                     request.setAttribute("msgErro", ConstantesMSG.MSG_ERRO_USUARIO_SENHA_INVALIDO);
                 }
             }
-        } catch (ExceçaoNegocio | ExceçaoPersistencia ex){
+        } catch (ExcecaoNegocio | ExcecaoPersistencia ex){
             request.setAttribute("msgErro", ex.getMessage());
         }
         return proxima;

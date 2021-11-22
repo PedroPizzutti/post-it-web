@@ -6,7 +6,7 @@
 package br.pizzutti.postweb.dao;
 
 import br.pizzutti.postweb.dto.UsuarioDTO;
-import br.pizzutti.postweb.exception.ExceçaoPersistencia;
+import br.pizzutti.postweb.exception.ExcecaoPersistencia;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -28,11 +28,11 @@ public class UsuarioDAO {
     /**
      * 
      * @param usuarioDTO
-     * @throws ExceçaoPersistencia
+     * @throws ExcecaoPersistencia
      * 
      * Método para inserção de novos usuários.
      */
-    public void inserirUsuario(UsuarioDTO usuarioDTO) throws ExceçaoPersistencia{
+    public void inserirUsuario(UsuarioDTO usuarioDTO) throws ExcecaoPersistencia{
         
         try {
             conexao = new Conexao().conectarBanco();
@@ -49,7 +49,7 @@ public class UsuarioDAO {
             pstm.execute();
         } catch (ClassNotFoundException | SQLException ex) {
             ex.printStackTrace();
-            throw new ExceçaoPersistencia(ex);
+            throw new ExcecaoPersistencia(ex);
         } finally {
             try{
                 conexao.close();
@@ -63,11 +63,11 @@ public class UsuarioDAO {
      * 
      * @param usuarioDTO
      * @return
-     * @throws ExceçaoPersistencia 
+     * @throws ExcecaoPersistencia 
      * 
      * Método para validar usuário e senha.
      */
-    public boolean validarUsuario(UsuarioDTO usuarioDTO) throws ExceçaoPersistencia{
+    public boolean validarUsuario(UsuarioDTO usuarioDTO) throws ExcecaoPersistencia{
         
         boolean isValido = false;
         
@@ -90,7 +90,7 @@ public class UsuarioDAO {
 
         } catch (Exception ex){
             ex.printStackTrace();
-            throw new ExceçaoPersistencia(ex);
+            throw new ExcecaoPersistencia(ex);
         } finally {
             try{
                 conexao.close();
@@ -101,7 +101,7 @@ public class UsuarioDAO {
         return isValido;
     }
     
-    public UsuarioDTO usuarioBanco(UsuarioDTO usuarioDTO) throws ExceçaoPersistencia{
+    public UsuarioDTO usuarioBanco(UsuarioDTO usuarioDTO) throws ExcecaoPersistencia{
         
         UsuarioDTO usuarioBanco = new UsuarioDTO();
         
@@ -127,7 +127,7 @@ public class UsuarioDAO {
 
         } catch (Exception ex){
             ex.printStackTrace();
-            throw new ExceçaoPersistencia(ex);
+            throw new ExcecaoPersistencia(ex);
         } finally {
             try{
                 conexao.close();

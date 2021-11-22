@@ -6,7 +6,7 @@
 package br.pizzutti.postweb.dao;
 
 import br.pizzutti.postweb.dto.LembreteDTO;
-import br.pizzutti.postweb.exception.ExceçaoPersistencia;
+import br.pizzutti.postweb.exception.ExcecaoPersistencia;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -25,9 +25,9 @@ public class LembreteDAO {
     /**
      * Método de inserir um novo lembrete.
      * @param lembreteDTO
-     * @throws ExceçaoPersistencia 
+     * @throws ExcecaoPersistencia 
      */
-    public void inserirLembrete(LembreteDTO lembreteDTO) throws ExceçaoPersistencia{
+    public void inserirLembrete(LembreteDTO lembreteDTO) throws ExcecaoPersistencia{
         
         try {
             conexao = new Conexao().conectarBanco();
@@ -41,7 +41,7 @@ public class LembreteDAO {
             
             pstm.execute();
         } catch (ClassNotFoundException | SQLException ex) {
-            throw new ExceçaoPersistencia(ex);
+            throw new ExcecaoPersistencia(ex);
         } finally {
             try{
                 conexao.close();
