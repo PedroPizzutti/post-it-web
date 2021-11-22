@@ -10,6 +10,7 @@ import br.pizzutti.postweb.dao.LembreteDAO;
 import br.pizzutti.postweb.dto.LembreteDTO;
 import br.pizzutti.postweb.exception.ExcecaoNegocio;
 import br.pizzutti.postweb.exception.ExcecaoPersistencia;
+import br.pizzutti.postweb.util.ConstantesMSG;
 import javax.servlet.http.HttpServletRequest;
 
 /**
@@ -43,15 +44,13 @@ public class NovoLembreteCommand implements Command {
                 lembreteDAO.inserirLembrete(lembreteDTO);
                 proxima = "lembrete.jsp";
                 
+            } else {
+                request.setAttribute("msgErro", ConstantesMSG.MSG_ERRO_LEMBRETE_VAZIO);
             }
         } catch (ExcecaoNegocio | ExcecaoPersistencia ex){
             request.setAttribute("msgErro", ex.getMessage());
         }
-        
-        if(idPessoa != 0){
-            proxima = "lembrete.jsp";
-        }
-       
+           
         return proxima;
     }
     

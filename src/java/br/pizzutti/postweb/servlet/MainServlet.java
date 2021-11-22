@@ -4,6 +4,7 @@ import br.pizzutti.postweb.command.Command;
 import br.pizzutti.postweb.command.LoginCommand;
 import br.pizzutti.postweb.command.NovoLembreteCommand;
 import br.pizzutti.postweb.command.NovoUsuarioCommand;
+import br.pizzutti.postweb.command.SairCommand;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -29,6 +30,7 @@ public class MainServlet extends HttpServlet {
         comandos.put("novoUsuario", new NovoUsuarioCommand());
         comandos.put("login", new LoginCommand());
         comandos.put("novoLembrete", new NovoLembreteCommand());
+        comandos.put("logout", new SairCommand());
     }
 
     

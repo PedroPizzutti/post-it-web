@@ -45,7 +45,7 @@ public class NovoUsuarioCommand implements Command{
             if(isValido){
                 UsuarioDAO usuarioDAO = new UsuarioDAO();
                 usuarioDAO.inserirUsuario(usuarioDTO);
-                proxima = "login.jsp";
+                proxima = "index.jsp";
                 request.setAttribute("msgSucesso", ConstantesMSG.MSG_SUCESSO_CAD_USUARIO);
             } else {
                 request.setAttribute("msgErro", ConstantesMSG.MSG_ERRO_CAD_USUARIO);

@@ -16,12 +16,12 @@
     </head>
     <body>
         <main>
+            <jsp:include page="msg.jsp"></jsp:include>  
             <form action="main?acao=novoLembrete" method="post">
                 <fieldset class="novoLembrete">
                     <legend>Novo Lembrete</legend>
                     <input type="number" name="idPessoa" value="${usuarioDTO.idUsuario}" style="display: none">
                     <textarea rows="3" cols="10" autofocus="true" maxlength="40" name="lembrete"></textarea>
-                    <jsp:include page="msg.jsp"></jsp:include>
                     <input type="submit" value="Colar no Mural" id="botaoNovoLembrete">
                 </fieldset>
             </form>

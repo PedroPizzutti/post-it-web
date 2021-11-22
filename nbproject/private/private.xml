@@ -5,9 +5,11 @@
         <group>
             <file>file:/D:/Meus%20Documentos/Documentos/MeusProjetos/post-it_web/web/novoLembrete.jsp</file>
             <file>file:/D:/Meus%20Documentos/Documentos/MeusProjetos/post-it_web/src/java/br/pizzutti/postweb/command/LoginCommand.java</file>
+            <file>file:/D:/Meus%20Documentos/Documentos/MeusProjetos/post-it_web/src/java/br/pizzutti/postweb/dto/UsuarioDTO.java</file>
             <file>file:/D:/Meus%20Documentos/Documentos/MeusProjetos/post-it_web/web/lembrete.jsp</file>
-            <file>file:/D:/Meus%20Documentos/Documentos/MeusProjetos/post-it_web/web/css/style.css</file>
             <file>file:/D:/Meus%20Documentos/Documentos/MeusProjetos/post-it_web/web/index.jsp</file>
+            <file>file:/D:/Meus%20Documentos/Documentos/MeusProjetos/post-it_web/src/java/br/pizzutti/postweb/command/NovoLembreteCommand.java</file>
+            <file>file:/D:/Meus%20Documentos/Documentos/MeusProjetos/post-it_web/web/msg.jsp</file>
             <file>file:/D:/Meus%20Documentos/Documentos/MeusProjetos/post-it_web/web/novoUsuario.jsp</file>
         </group>
     </open-files>

@@ -23,7 +23,7 @@
         <main class="mainLembrete">
             <fieldset class="blocoLembrete">
                 <div class="boasVindas">
-                    <p id="nomeLembrete">Mural de <strong>${sessionScope.usuarioDTO.nome}</strong></p><a id="deslogar" href="###">Sair</a> 
+                    <p id="nomeLembrete">Mural de <strong>${sessionScope.usuarioDTO.nome}</strong></p><a id="deslogar" href="main?acao=logout">Sair</a> 
                 </div>
                 <div id="campoLembretes">
                   
