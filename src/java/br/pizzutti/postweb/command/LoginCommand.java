@@ -5,12 +5,15 @@
  */
 package br.pizzutti.postweb.command;
 
+import br.pizzutti.postweb.bo.LembreteBO;
 import br.pizzutti.postweb.bo.UsuarioBO;
 import br.pizzutti.postweb.dao.UsuarioDAO;
+import br.pizzutti.postweb.dto.LembreteDTO;
 import br.pizzutti.postweb.dto.UsuarioDTO;
 import br.pizzutti.postweb.exception.ExcecaoNegocio;
 import br.pizzutti.postweb.exception.ExcecaoPersistencia;
 import br.pizzutti.postweb.util.ConstantesMSG;
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 /**
@@ -45,7 +48,12 @@ public class LoginCommand implements Command {
                 
                 if(loginAutorizado){
                     UsuarioDTO usuarioBanco = usuarioDAO.usuarioBanco(usuarioNegocio);
+                    LembreteBO lembreteBO = new LembreteBO();
+                    List<LembreteDTO> listaLembretes = lembreteBO.listarLembretes(usuarioBanco.getIdUsuario());
+                    
+                    request.getSession().setAttribute("listaLembretes", listaLembretes);
                     request.getSession().setAttribute("usuarioDTO", usuarioBanco);
+                    
                     proxima = "lembrete.jsp";
                 } else {
                     request.setAttribute("msgErro", ConstantesMSG.MSG_ERRO_USUARIO_SENHA_INVALIDO);

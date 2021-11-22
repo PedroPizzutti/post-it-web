@@ -4,6 +4,9 @@
     Author     : Pedro
 --%>
 
+<%@page import="java.util.List"%>
+<%@page import="br.pizzutti.postweb.dto.LembreteDTO"%>
+<%@page import="br.pizzutti.postweb.dto.LembreteDTO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -26,7 +29,21 @@
                     <p id="nomeLembrete">Mural de <strong>${sessionScope.usuarioDTO.nome}</strong></p><a id="deslogar" href="main?acao=logout">Sair</a> 
                 </div>
                 <div id="campoLembretes">
-                  
+                    <%
+                        List<LembreteDTO> listaLembrete = (List<LembreteDTO>) session.getAttribute("listaLembretes");
+                        for(LembreteDTO lembrete : listaLembrete){
+                    %>
+                    <fieldset class="lembrete">
+                        <p id="botoesLembrete">
+                        <a class="botaoLembrete" href="">Alt</a>
+                        <a class="botaoLembrete" href="">Del</a>
+                        </p>
+                        <p id="paragrafoLembrete"><%=lembrete.getDescricao()%></p>
+                        
+                    </fieldset>
+                    <%
+                    }
+                    %>
                 </div>
             </fieldset>
         </main>

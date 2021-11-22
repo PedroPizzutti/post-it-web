@@ -11,6 +11,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -49,5 +53,45 @@ public class LembreteDAO {
                 ex.printStackTrace();
             }
         }
+    }
+    
+    /**
+     * Método para listar os lembretes de um usuário.
+     * @param idUsuario
+     * @return
+     * @throws ExcecaoPersistencia 
+     */
+    public List<LembreteDTO> listarLembretes(int idUsuario) throws ExcecaoPersistencia{
+        List<LembreteDTO> listaLembretes = new ArrayList<>();
+        
+        try{
+            conexao = new Conexao().conectarBanco();
+            
+            StringBuilder sql = new StringBuilder();
+            sql.append("SELECT * FROM tb_lembrete WHERE id_pessoa = ?");
+            
+            pstm = conexao.prepareStatement(sql.toString());
+            pstm.setInt(1, idUsuario);
+            
+            resultSet = pstm.executeQuery();
+            
+            while(resultSet.next()){
+                LembreteDTO lembreteDTO = new LembreteDTO();
+                lembreteDTO.setIdLembrete(resultSet.getInt("id_lembrete"));
+                lembreteDTO.setDescricao(resultSet.getString("descricao_lembrete"));
+                lembreteDTO.setIdPessoa(resultSet.getInt("id_pessoa"));
+                
+                listaLembretes.add(lembreteDTO);
+            }
+        } catch (Exception ex){
+            throw new ExcecaoPersistencia(ex);
+        } finally {
+            try {
+                conexao.close();
+            } catch (Exception ex){
+                ex.printStackTrace();
+            }
+        }
+        return listaLembretes;
     }
 }

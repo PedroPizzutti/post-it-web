@@ -26,4 +26,8 @@ public class ExcecaoNegocio extends Exception {
     public ExcecaoNegocio(Throwable cause) {
         super(cause);
     }  
+
+    public ExcecaoNegocio() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
