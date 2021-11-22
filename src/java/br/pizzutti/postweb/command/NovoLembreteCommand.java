@@ -8,9 +8,11 @@ package br.pizzutti.postweb.command;
 import br.pizzutti.postweb.bo.LembreteBO;
 import br.pizzutti.postweb.dao.LembreteDAO;
 import br.pizzutti.postweb.dto.LembreteDTO;
+import br.pizzutti.postweb.dto.UsuarioDTO;
 import br.pizzutti.postweb.exception.ExcecaoNegocio;
 import br.pizzutti.postweb.exception.ExcecaoPersistencia;
 import br.pizzutti.postweb.util.ConstantesMSG;
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 /**
@@ -42,6 +44,8 @@ public class NovoLembreteCommand implements Command {
                 
                 LembreteDAO lembreteDAO = new LembreteDAO();
                 lembreteDAO.inserirLembrete(lembreteDTO);
+                List<LembreteDTO> listaLembretes = lembreteDAO.listarLembretes(idPessoa);
+                request.getSession().setAttribute("listaLembretes", listaLembretes);
                 proxima = "lembrete.jsp";
                 
             } else {

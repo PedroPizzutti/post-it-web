@@ -71,17 +71,19 @@ fieldset.lembrete{
     box-shadow: 3px 3px 7px #999999;
 }
 
-p#botoesLembrete{
+.botoesLembrete{
     padding: 0;
     text-align: right;
-    margin: 3px 3px 5px auto;
+    margin: 3px 3px 0px auto;
 }
 
-a.botaoLembrete{
-    
+.botaoImg{
+    width: 16px;
 }
 
-
+.botaoImg:hover{
+    background-color: #999999;
+}
 
 fieldset.usuario{
     max-width: 300px;

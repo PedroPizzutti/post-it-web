@@ -20,6 +20,5 @@ public class ConstantesMSG {
     public static final String MSG_ERRO_USUARIO_SENHA_INVALIDO = "Usuário/Senha Inválidos!";
     
     public static final String MSG_ERRO_LEMBRETE_VAZIO = "Insira o Lembrete!";
-    
-    
+
 }

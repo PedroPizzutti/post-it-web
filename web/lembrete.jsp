@@ -34,12 +34,13 @@
                         for(LembreteDTO lembrete : listaLembrete){
                     %>
                     <fieldset class="lembrete">
-                        <p id="botoesLembrete">
-                        <a class="botaoLembrete" href="">Alt</a>
-                        <a class="botaoLembrete" href="">Del</a>
+                        <p class="botoesLembrete">
+                            <a href=""><img class="botaoImg" src="img/botao-atualizar.png" alt="botao atualizar"></a>
+                            <a href="main?acao=excluir&idLembrete=<%=lembrete.getIdLembrete()%>&idPessoa=<%=lembrete.getIdPessoa()%>" 
+                               title="excluir"><img class="botaoImg" src="img/botao-fechar.png" alt="botao excluir"></a>
                         </p>
                         <p id="paragrafoLembrete"><%=lembrete.getDescricao()%></p>
-                        
+      
                     </fieldset>
                     <%
                     }

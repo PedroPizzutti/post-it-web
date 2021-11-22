@@ -11,10 +11,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -24,6 +23,7 @@ import java.util.logging.Logger;
 public class LembreteDAO {
     private Connection conexao;
     private PreparedStatement pstm;
+    private Statement stm;
     private ResultSet resultSet;
     
     /**
@@ -93,5 +93,31 @@ public class LembreteDAO {
             }
         }
         return listaLembretes;
+    }
+    
+    /**
+     * Método para excluir lembretes.
+     * @param idLembrete
+     * @throws ExcecaoPersistencia 
+     */
+    public void excluirLembrete(int idLembrete) throws ExcecaoPersistencia{
+        try{
+            conexao = new Conexao().conectarBanco();
+            
+            StringBuilder sql = new StringBuilder();
+            sql.append("DELETE FROM tb_lembrete WHERE id_lembrete = " + idLembrete);
+            
+            stm = conexao.createStatement();
+            stm.executeUpdate(sql.toString());
+            
+        } catch (Exception ex){
+            throw new ExcecaoPersistencia(ex);
+        } finally {
+            try {
+                conexao.close();
+            } catch (Exception ex){
+                ex.printStackTrace();
+            }
+        }
     }
 }

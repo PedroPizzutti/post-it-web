@@ -1,6 +1,7 @@
 package br.pizzutti.postweb.servlet;
 
 import br.pizzutti.postweb.command.Command;
+import br.pizzutti.postweb.command.ExcluirCommand;
 import br.pizzutti.postweb.command.LoginCommand;
 import br.pizzutti.postweb.command.NovoLembreteCommand;
 import br.pizzutti.postweb.command.NovoUsuarioCommand;
@@ -27,10 +28,12 @@ public class MainServlet extends HttpServlet {
 
     @Override
     public void init(){
-        comandos.put("novoUsuario", new NovoUsuarioCommand());
         comandos.put("login", new LoginCommand());
-        comandos.put("novoLembrete", new NovoLembreteCommand());
         comandos.put("logout", new SairCommand());
+        comandos.put("novoUsuario", new NovoUsuarioCommand());
+        comandos.put("novoLembrete", new NovoLembreteCommand());
+        comandos.put("excluir", new ExcluirCommand());
+
     }
 
     
