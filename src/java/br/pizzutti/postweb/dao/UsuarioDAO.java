@@ -11,6 +11,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 /**
  *
@@ -21,6 +22,7 @@ public class UsuarioDAO {
     
     private Connection conexao;
     private PreparedStatement pstm;
+    private Statement stm;
     private ResultSet resultSet;
 
     public UsuarioDAO() {
@@ -99,6 +101,31 @@ public class UsuarioDAO {
             }
         }
         return isValido;
+    }
+    
+    public boolean checarDisponibilidadeLogin(String usuario) throws ExcecaoPersistencia{
+        
+        boolean disponivel = true;
+        
+        try{
+            conexao = new Conexao().conectarBanco();
+            
+            StringBuilder sql = new StringBuilder();
+            sql.append("SELECT login_usuario FROM tb_usuario");
+            sql.append(" WHERE login_usuario = '" + usuario + "'");
+            
+            stm = conexao.createStatement();
+            
+            resultSet = stm.executeQuery(sql.toString());
+            
+            if(resultSet.next()){
+                disponivel = false;
+            }
+            
+        } catch (Exception ex){
+            throw new ExcecaoPersistencia(ex);
+        }
+        return disponivel;
     }
     
     public UsuarioDTO usuarioBanco(UsuarioDTO usuarioDTO) throws ExcecaoPersistencia{

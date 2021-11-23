@@ -21,6 +21,45 @@ main{
     margin: 8% auto auto auto;
 }
 
+#botaoNovoLembrete{
+    margin: 0;
+    width: 100%;
+    border: none;
+    box-shadow: 0 0 5px #D6FF40;
+}
+
+#botaoNovoLembrete:hover{
+    background-color: #D6FF40;
+}
+
+.botoesLembrete{
+    padding: 0;
+    text-align: right;
+    margin: 3px 3px 0px auto;
+}
+
+.botaoImg{
+    width: 16px;
+}
+
+.botaoImg:hover{
+    background-color: #D6FF40;
+}
+
+#deslogar{
+    margin: auto;
+    float: right;
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#deslogar:hover{
+    background-color: #D6FF40;
+}
+
 fieldset.blocoLembrete{
     margin: 25px 230px 25px 230px;
     border: none;
@@ -35,30 +74,6 @@ fieldset.novoLembrete {
     box-shadow: 3px 3px 7px #999999;
 }
 
-legend{
-    font-weight: bold;
-}
-
-textarea{
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 50px;
-    border: none;
-    background-color: #C0D904;
-    font-size: 35px;
-    font-weight: bold;
-}
-#botaoNovoLembrete{
-    margin: 0;
-    width: 100%;
-    border: none;
-    box-shadow: 0 0 5px #D6FF40;
-}
-
-#botaoNovoLembrete:hover{
-    background-color: #D6FF40;
-}
-
 fieldset.lembrete{
     text-align: center;
     padding: 10px;
@@ -69,20 +84,6 @@ fieldset.lembrete{
     border: none;
     background-color: #C0D904;
     box-shadow: 3px 3px 7px #999999;
-}
-
-.botoesLembrete{
-    padding: 0;
-    text-align: right;
-    margin: 3px 3px 0px auto;
-}
-
-.botaoImg{
-    width: 16px;
-}
-
-.botaoImg:hover{
-    background-color: #999999;
 }
 
 fieldset.usuario{
@@ -108,6 +109,20 @@ fieldset#novoUsuario{
     margin: 0 0 50px 0;
 }
 
+legend{
+    font-weight: bold;
+}
+
+textarea{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 50px;
+    border: none;
+    background-color: #C0D904;
+    font-size: 35px;
+    font-weight: bold;
+}
+
 #campoLembretes{
     display: block;
 }
@@ -126,14 +141,6 @@ fieldset#novoUsuario{
     text-align: center;
     margin: 0;
     float: left;
-}
-
-#deslogar{
-    margin: auto;
-    float: right;
-    text-decoration: none;
-    color: black;
-    font-size: 16px;
 }
 
 table{

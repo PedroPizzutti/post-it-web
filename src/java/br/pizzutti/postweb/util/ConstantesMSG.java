@@ -15,6 +15,8 @@ public class ConstantesMSG {
   
     public static final String MSG_ERRO_CAD_USUARIO = "Problema no Cadastro, Verifique os Campos!";
     
+    public static final String MSG_ERRO_CAD_JA_UTILIZADO = "Este login já está em uso!";
+    
     public static final String MSG_ERRO_CAMPO_OBRIGATORIO = "Campo ? obrigatório!";
     
     public static final String MSG_ERRO_USUARIO_SENHA_INVALIDO = "Usuário/Senha Inválidos!";

@@ -44,9 +44,16 @@ public class NovoUsuarioCommand implements Command{
             
             if(isValido){
                 UsuarioDAO usuarioDAO = new UsuarioDAO();
-                usuarioDAO.inserirUsuario(usuarioDTO);
-                proxima = "index.jsp";
-                request.setAttribute("msgSucesso", ConstantesMSG.MSG_SUCESSO_CAD_USUARIO);
+                boolean disponivel = usuarioDAO.checarDisponibilidadeLogin(usuario);
+                
+                if(disponivel){
+                    usuarioDAO.inserirUsuario(usuarioDTO);
+                    proxima = "index.jsp";
+                    request.setAttribute("msgSucesso", ConstantesMSG.MSG_SUCESSO_CAD_USUARIO);
+                } else {
+                    proxima = "novoUsuario.jsp";
+                    request.setAttribute("msgErro", ConstantesMSG.MSG_ERRO_CAD_JA_UTILIZADO);
+                } 
             } else {
                 request.setAttribute("msgErro", ConstantesMSG.MSG_ERRO_CAD_USUARIO);
             }
