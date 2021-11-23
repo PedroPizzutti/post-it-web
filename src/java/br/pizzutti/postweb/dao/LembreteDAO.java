@@ -55,6 +55,32 @@ public class LembreteDAO {
         }
     }
     
+    public void atualizarLembrete(LembreteDTO lembreteDTO) throws ExcecaoPersistencia{
+        
+        try{
+            conexao = new Conexao().conectarBanco();
+            
+            StringBuilder sql = new StringBuilder();
+            sql.append("UPDATE tb_lembrete SET descricao_lembrete = ?");
+            sql.append(" WHERE id_lembrete = ?");
+            
+            pstm = conexao.prepareCall(sql.toString());
+            pstm.setString(1, lembreteDTO.getDescricao());
+            pstm.setInt(2, lembreteDTO.getIdLembrete());
+            
+            pstm.executeUpdate();
+            
+        } catch (Exception ex){
+            throw new ExcecaoPersistencia(ex);
+        } finally {
+            try {
+                conexao.close();
+            } catch (Exception ex){
+                ex.printStackTrace();
+            }
+        }
+    }
+    
     /**
      * Método para listar os lembretes de um usuário.
      * @param idUsuario
@@ -95,6 +121,12 @@ public class LembreteDAO {
         return listaLembretes;
     }
     
+    /**
+     * Método para pegar a descrição de um lembrete através do ID do Lembrete.
+     * @param idLembrete
+     * @return
+     * @throws ExcecaoPersistencia 
+     */
     public String pegarLembretePorId(int idLembrete) throws ExcecaoPersistencia{
         try {
             

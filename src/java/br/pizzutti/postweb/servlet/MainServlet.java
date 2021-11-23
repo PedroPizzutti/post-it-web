@@ -1,5 +1,6 @@
 package br.pizzutti.postweb.servlet;
 
+import br.pizzutti.postweb.command.AtualizarLembreteCommand;
 import br.pizzutti.postweb.command.Command;
 import br.pizzutti.postweb.command.ExcluirCommand;
 import br.pizzutti.postweb.command.LoginCommand;
@@ -35,6 +36,7 @@ public class MainServlet extends HttpServlet {
         comandos.put("novoLembrete", new NovoLembreteCommand());
         comandos.put("excluir", new ExcluirCommand());
         comandos.put("prepararAtualizar", new PrepararAtualizarCommand());
+        comandos.put("atualizarLembrete", new AtualizarLembreteCommand());
 
     }
 

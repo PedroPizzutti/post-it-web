@@ -20,6 +20,8 @@
             <form action="main?acao=atualizarLembrete" method="post">
                 <fieldset class="novoLembrete">
                     <legend>Atualizar Lembrete</legend>
+                    <input type="number" name="idLembrete" value="${lembreteDTO.idLembrete}" style="display: none">
+                    <input type="number" name="idPessoa" value="${lembreteDTO.idPessoa}" style="display: none">
                     <textarea rows="3" cols="10" autofocus="true" maxlength="40" name="lembrete">${lembreteDTO.descricao}</textarea>
                     <input type="submit" value="Colar no Mural" id="botaoNovoLembrete">
                 </fieldset>

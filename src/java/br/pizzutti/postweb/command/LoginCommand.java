@@ -19,6 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  *
  * @author Pedro
+ * Classe de comando para realização de Login
  */
 public class LoginCommand implements Command {
     

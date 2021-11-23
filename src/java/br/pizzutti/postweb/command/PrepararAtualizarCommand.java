@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  *
  * @author Pedro
+ * classe de comando para preparar a atualização de lembrete
  */
 public class PrepararAtualizarCommand implements Command{
     
