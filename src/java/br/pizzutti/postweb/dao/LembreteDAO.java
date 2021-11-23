@@ -95,6 +95,36 @@ public class LembreteDAO {
         return listaLembretes;
     }
     
+    public String pegarLembretePorId(int idLembrete) throws ExcecaoPersistencia{
+        try {
+            
+            conexao = new Conexao().conectarBanco();
+            
+            String lembrete = "";
+            
+            StringBuilder sql = new StringBuilder();
+            sql.append("SELECT * FROM tb_lembrete WHERE id_lembrete = " + idLembrete);
+            
+            stm = conexao.createStatement();
+            
+            resultSet = stm.executeQuery(sql.toString());
+            
+            if(resultSet.next()){
+                lembrete = resultSet.getString("descricao_lembrete");
+            }
+            
+            return lembrete;
+        } catch(Exception ex){
+            throw new ExcecaoPersistencia(ex);
+        } finally {
+            try {
+                conexao.close();
+            } catch (Exception ex){
+                ex.printStackTrace();
+            }
+        }
+    }
+    
     /**
      * Método para excluir lembretes.
      * @param idLembrete

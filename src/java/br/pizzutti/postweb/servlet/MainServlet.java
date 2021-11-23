@@ -5,6 +5,7 @@ import br.pizzutti.postweb.command.ExcluirCommand;
 import br.pizzutti.postweb.command.LoginCommand;
 import br.pizzutti.postweb.command.NovoLembreteCommand;
 import br.pizzutti.postweb.command.NovoUsuarioCommand;
+import br.pizzutti.postweb.command.PrepararAtualizarCommand;
 import br.pizzutti.postweb.command.SairCommand;
 import java.io.IOException;
 import java.util.HashMap;
@@ -33,6 +34,7 @@ public class MainServlet extends HttpServlet {
         comandos.put("novoUsuario", new NovoUsuarioCommand());
         comandos.put("novoLembrete", new NovoLembreteCommand());
         comandos.put("excluir", new ExcluirCommand());
+        comandos.put("prepararAtualizar", new PrepararAtualizarCommand());
 
     }
 

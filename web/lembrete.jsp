@@ -35,9 +35,10 @@
                     %>
                     <fieldset class="lembrete">
                         <p class="botoesLembrete">
-                            <a href=""><img class="botaoImg" src="img/botao-atualizar.png" alt="botao atualizar"></a>
-                            <a href="main?acao=excluir&idLembrete=<%=lembrete.getIdLembrete()%>&idPessoa=<%=lembrete.getIdPessoa()%>" 
-                               title="excluir"><img class="botaoImg" src="img/botao-fechar.png" alt="botao excluir"></a>
+                            <a href="main?acao=prepararAtualizar&idLembrete=<%=lembrete.getIdLembrete()%>&idPessoa=<%=lembrete.getIdPessoa()%>">
+                                <img class="botaoImg" src="img/botao-atualizar.png" alt="botao atualizar"></a>
+                            <a href="main?acao=excluir&idLembrete=<%=lembrete.getIdLembrete()%>&idPessoa=<%=lembrete.getIdPessoa()%>" title="excluir">
+                                <img class="botaoImg" src="img/botao-fechar.png" alt="botao excluir"></a>
                         </p>
                         <p id="paragrafoLembrete"><%=lembrete.getDescricao()%></p>
       
