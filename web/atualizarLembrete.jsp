@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Novo Lembrete</title>
+        <title>Atualizar Lembrete</title>
         <link rel="shortcut icon" type="imagex/png" href="img/icone.ico">
         <link rel="stylesheet" href="css/style.css">
     </head>

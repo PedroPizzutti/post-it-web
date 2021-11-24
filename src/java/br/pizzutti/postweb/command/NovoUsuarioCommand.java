@@ -55,6 +55,7 @@ public class NovoUsuarioCommand implements Command{
                     request.setAttribute("msgErro", ConstantesMSG.MSG_ERRO_CAD_JA_UTILIZADO);
                 } 
             } else {
+                proxima = "novoUsuario.jsp";
                 request.setAttribute("msgErro", ConstantesMSG.MSG_ERRO_CAD_USUARIO);
             }
         } catch (Exception ex) {
